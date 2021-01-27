@@ -6,7 +6,7 @@
 .pnp.js
 
 #secret file ========
-secret.js
+src/api/secret.js
 
 # testing
 /coverage
