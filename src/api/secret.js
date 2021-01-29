@@ -1,5 +1,6 @@
-export const API_KEY = "dc6e1a72b676558cedabbabdfc3a4b82"
-export const BASE_URL = 'https://api.themoviedb.org/3/movie'
+export const BASE_URL = 'https://api.themoviedb.org/3/search'
+export const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w500'
 
 //sample request
-//https://api.themoviedb.org/3/movie/550?api_key=dc6e1a72b676558cedabbabdfc3a4b82
+//https://api.themoviedb.org/3/movie/550?api_key={key}
+//search at : https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
