@@ -1,4 +1,4 @@
-import React, {useReducer, createContext, useEffect} from 'react'
+import React, { useReducer, } from 'react'
 
 import MovieContext from './movieContext'
 import { movieReducer } from './movieReducer'

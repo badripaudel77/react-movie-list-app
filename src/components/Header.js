@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 
+import MovieContext from '../context/movies/movieContext'
+
 export const Header = () => {
+
+  const movieContext = useContext(MovieContext) 
+  const { watched, watchlist } = movieContext 
 
     return (
             <div className="bg-gray-800 text-white p-2 
@@ -15,8 +20,14 @@ export const Header = () => {
 
                 {/* right float */}
                 <div className="text-gray-400">
-                        <Link to="/watchlist" className="m-7 hover:text-gray-500">Watchlist</Link>
-                        <Link to="/watched" className="m-7 hover:text-gray-500">Watched</Link>
+                        <Link to="/watchlist" className="m-7 hover:text-gray-500">
+                                Watchlist
+                               <span className="m-3 bg-green-500 text-gray-300 rounded-full p-1">{watchlist && watchlist.length}</span>
+                        </Link>
+                        <Link to="/watched" className="m-7 hover:text-gray-500">
+                                Watched
+                               <span className="m-3 bg-green-500 text-gray-300 rounded-full p-1">{watched && watched.length}</span>
+                                </Link>
                 </div>
             </div>
     )
