@@ -1,16 +1,22 @@
-import React, { useReducer, } from 'react'
+import React, { useReducer, useEffect} from 'react'
 
 import MovieContext from './movieContext'
 import { movieReducer } from './movieReducer'
 import { types } from './types'
 
 const initialState = {
-  watchlist : [],
-  watched : [],
+  watchlist : localStorage.getItem("watchlist") ? JSON.parse(localStorage.getItem("watchlist")) : [],
+  watched : localStorage.getItem("watched") ? JSON.parse(localStorage.getItem("watched")) : [],
 }
 
 const MovieState = (props) => {
   const [state, dispath] = useReducer(movieReducer, initialState);
+
+  //update state as soon as item is selected and added to localstorage
+  useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(state.watchlist))
+    localStorage.setItem("watched", JSON.stringify(state.watched))  
+  }, [state])
 
   //add to watchlist
   const addToWatchlist = (movie) => {
