@@ -25,7 +25,7 @@ const Search = () => {
                     />
                 </form>
             </div>
-            <div className="flex flex-row flex-wrap">
+            <div className="text-center flex flex-row flex-wrap">
                 {
                     movies.length >0 && movies.map(movie => (
                         <MovieItem movie={movie} key={movie.id}/>

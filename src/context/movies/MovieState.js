@@ -27,6 +27,16 @@ const MovieState = (props) => {
   const addToWatched = (movie) => {
     dispath({type : types.ADD_TO_WATCHED , payload : movie})
 }
+
+  //remove from the watchlist
+  const removeFromWatched = (movie) => {
+    dispath({type : types.REMOVE_FROM_WATCHED, payload : movie.id})
+  }
+
+  //remove from the watchlist
+  const removeFromWatchlist = (movie) => {
+    dispath({type : types.REMOVE_FROM_WATCHLIST, payload : movie.id})
+  }
     return (
         <MovieContext.Provider
           value={{
@@ -35,6 +45,8 @@ const MovieState = (props) => {
 
             addToWatchlist,
             addToWatched,
+            removeFromWatched,
+            removeFromWatchlist
           }}
         >
             {props.children}
