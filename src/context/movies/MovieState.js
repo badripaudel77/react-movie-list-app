@@ -7,6 +7,7 @@ import { types } from './types'
 const initialState = {
   watchlist : localStorage.getItem("watchlist") ? JSON.parse(localStorage.getItem("watchlist")) : [],
   watched : localStorage.getItem("watched") ? JSON.parse(localStorage.getItem("watched")) : [],
+  isAuthenticated : false,
 }
 
 const MovieState = (props) => {
@@ -42,6 +43,7 @@ const MovieState = (props) => {
           value={{
             watchlist : state.watchlist,
             watched : state.watched,
+            isAuthenticated : state.isAuthenticated,
 
             addToWatchlist,
             addToWatched,

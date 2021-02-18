@@ -6,7 +6,7 @@ import MovieContext from '../context/movies/movieContext'
 export const Header = () => {
 
   const movieContext = useContext(MovieContext) 
-  const { watched, watchlist } = movieContext 
+  const { watched, watchlist, isAuthenticated } = movieContext 
 
     return (
             <div className="bg-gray-800 text-white p-2 
@@ -19,15 +19,21 @@ export const Header = () => {
                 </div>
 
                 {/* right float */}
-                <div className="text-gray-400">
-                        <Link to="/watchlist" className="m-7 hover:text-gray-500">
-                                Watchlist
-                               <span className="m-3 bg-green-500 text-gray-300 rounded-full p-1">{watchlist && watchlist.length}</span>
-                        </Link>
-                        <Link to="/watched" className="m-7 hover:text-gray-500">
-                                Watched
-                               <span className="m-3 bg-green-500 text-gray-300 rounded-full p-1">{watched && watched.length}</span>
+                <div className="text-gray-400">       
+                        <> 
+                                <Link to="/watchlist" className="m-7 hover:text-gray-500">
+                                        Watchlist
+                                <span className="m-3 bg-green-500 text-gray-300 rounded-full p-1">{watchlist && watchlist.length}</span>
                                 </Link>
+                                <Link to="/watched" className="m-7 hover:text-gray-500">
+                                        Watched
+                                <span className="m-3 bg-green-500 text-gray-300 rounded-full p-1">{watched && watched.length}</span>
+                                </Link>
+                        </> 
+                       
+                        {/* <Link to="/" className="m-7 hover:text-gray-500">
+                                <span className="text-red-500"> {isAuthenticated ? "Logout" : "Login"}</span>
+                        </Link> */}
                 </div>
             </div>
     )
