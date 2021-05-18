@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 
 import MovieContext from '../context/movies/movieContext'
 import WatchedMovieItem from './WatchedMovieItem'
+
 const Watched = () => {
  const movieContext = useContext(MovieContext) 
  const { watched } = movieContext   

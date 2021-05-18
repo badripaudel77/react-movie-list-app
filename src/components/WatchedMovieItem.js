@@ -1,6 +1,8 @@
 import React, {useContext} from 'react'
 import { BASE_IMAGE_URL } from '../api/secret'
 
+import { Link } from 'react-router-dom'
+
 import MovieContext from '../context/movies/movieContext'
 
 const MovieItem = ({movie}) => {
@@ -10,6 +12,7 @@ const MovieItem = ({movie}) => {
 
 return (
     <div className="p-4 hover:bg-gray-300">  
+        <Link to={`/movie/${movie.id}`}>
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
                 <img className="w-full" src ={BASE_IMAGE_URL  && BASE_IMAGE_URL + movie.backdrop_path}  alt={movie.original_title}/>
                 <div className="px-1 py-2">
@@ -24,6 +27,7 @@ return (
                     </button>
                 </div>
             </div>
+            </Link>
     </div>
     )}
 

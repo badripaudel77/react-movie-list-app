@@ -9,6 +9,7 @@ import Watchlist from './Watchlist';
 
 //import global state
 import MovieState from '../context/movies/MovieState';
+import { MovieDetails } from './MovieDetails';
 
 function App() {  
   return (
@@ -26,6 +27,7 @@ function App() {
              <Route path="/" exact component = {Search} />                       
              <Route path="/watched" exact component={Watched}/>
              <Route path="/watchlist" exact component={Watchlist}/>
+             <Route path="/movie/:movieId" exact component={MovieDetails}/>
              <Redirect to="/" ></Redirect>
              {/* <Route path="*" component={NoMatchComponent} /> */}
         </Switch>
